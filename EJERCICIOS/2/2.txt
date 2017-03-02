@@ -15,6 +15,7 @@
   Es decir, el comando /usr/bin/passwd ejecutado por un usuario se ejecutará
   como si lo hubiese invocado el superusuario, de manera de poder modificar
   /etc/passwd.
+        --> Modifica los permisos para un solo usuario.
 
 * Permiso set group ID, setgid o SGID: cuando un archivo que tiene este permiso
   asignado se ejecuta, el proceso resultante asumirá la ID de grupo efectiva
@@ -23,3 +24,5 @@
   grupo de ese directorio, a diferencia del comportamiento por defecto, que es
   usar el grupo primario del usuario efectivo al asignar el grupo de archivos
   nuevos y directorios.
+          --> Grupo del fichero, grupo de usuarios y no del usuario.
+              Ej: Grupo sudo.

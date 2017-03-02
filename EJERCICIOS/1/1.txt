@@ -1,14 +1,32 @@
 ¿Cuál es la diferencia entre usuario efectivo y usuario real?
 --------------------------------------------------------------------------------
 
-* El usuario real es el que ejecuta el proceso.
-* El usuario efectivo es en el que se ejecuta el proceso.
+  * El usuario real es donde el usuario (el propietario) corre los procesos y el
+    usuario efectivo es en donde en verdad se corren los procesos para evitar
+    problemas de permisos y para poder acceder a cosas como la base de datos etc...
 
-* Son los permisos reales del proceso. Aunque aparentemente es lo mismo, y casi
-  siempre lo es, a veces no coincide, por el bit uid del ejecutable. Si ese bit
-  esta activo indica q el usuario efectivo es el dueño o el grupo del archivo,
-  dependiendo de si es el bit uuid o guid.
-  Un programador puede querer renunciar a los privilegios del usuario mayores que
-  los suyos para asegurarse que el programa no tiene problemas, por ejemplo, los
-  daemons son lanzados por el usuario root, pero algunos tienen usuario propio
-  para evitar ejecutarse como root.
+    EJ: El programa passwd(1) se ejecuta con el ID real del usuario puesto que el
+        usuario está cambiando su contraseña. Pero para poder manipular la base
+        de datos de contraseñas debe ejecutarse con el ID efectivo del usuario root.
+        De este modo es posible que los usuarios cambien su contraseña sin llegar
+        a ver un error de permission denied (permido denegado).
+
+
+
+
+
+
+
+
+  * El usuario real es el que ejecuta el proceso. Es decir el que arranca.
+  * El usuario efectivo es en el que se ejecuta el proceso. Es decir es el ID
+    bajo el que se ejecuta el proceso.
+
+  * Son los permisos reales del proceso. Aunque aparentemente es lo mismo, y casi
+    siempre lo es, a veces no coincide, por el bit uid del ejecutable. Si ese bit
+    esta activo indica q el usuario efectivo es el dueño o el grupo del archivo,
+    dependiendo de si es el bit uuid o guid.
+    Un programador puede querer renunciar a los privilegios del usuario mayores que
+    los suyos para asegurarse que el programa no tiene problemas, por ejemplo, los
+    daemons son lanzados por el usuario root, pero algunos tienen usuario propio
+    para evitar ejecutarse como root.
