@@ -1,0 +1,5 @@
+¿Cuál es la diferencia entre usuario efectivo y usuario real?
+--------------------------------------------------------------------------------
+
+* El usuario real es el que ejecuta el proceso.
+* El usuario efectivo es en el que se ejecuta el proceso.

@@ -1,0 +1,25 @@
+¿Qué significado tiene las banderas Set-user-ID y Set-group-ID?
+--------------------------------------------------------------------------------
+
+* Son permisos de acceso que pueden asignarse a archivos o directorios en un
+  sistema operativo basado en Unix. Se utilizan principalmente para permitir
+  a los usuarios del sistema ejecutar binarios con privilegios elevados
+  temporalmente para realizar una tarea específica.
+
+* Permiso set user ID, setuid o SUID: cuando un archivo que tiene este permiso
+  asignado se ejecuta, el proceso resultante asumirá la ID de usuario efectiva
+  dada a la clase de usuario. El ejemplo típico es el cambio de una clave de
+  usuario: ningún usuario debería poder modificar /etc/passwd/ directamente.
+  La única forma de poder modificarlo debería ser a través del comando
+  correspondiente, que necesariamente tendrá que tener asignado el setuid.
+  Es decir, el comando /usr/bin/passwd ejecutado por un usuario se ejecutará
+  como si lo hubiese invocado el superusuario, de manera de poder modificar
+  /etc/passwd.
+
+* Permiso set group ID, setgid o SGID: cuando un archivo que tiene este permiso
+  asignado se ejecuta, el proceso resultante asumirá la ID de grupo efectiva
+  dada a la clase de grupo. Cuando el setgid le es asignado a un directorio,
+  archivos nuevos y directorios creados debajo de ese directorio heredarán el
+  grupo de ese directorio, a diferencia del comportamiento por defecto, que es
+  usar el grupo primario del usuario efectivo al asignar el grupo de archivos
+  nuevos y directorios.
