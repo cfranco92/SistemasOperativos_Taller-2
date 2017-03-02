@@ -3,3 +3,12 @@
 
 * El usuario real es el que ejecuta el proceso.
 * El usuario efectivo es en el que se ejecuta el proceso.
+
+* Son los permisos reales del proceso. Aunque aparentemente es lo mismo, y casi
+  siempre lo es, a veces no coincide, por el bit uid del ejecutable. Si ese bit
+  esta activo indica q el usuario efectivo es el dueño o el grupo del archivo,
+  dependiendo de si es el bit uuid o guid.
+  Un programador puede querer renunciar a los privilegios del usuario mayores que
+  los suyos para asegurarse que el programa no tiene problemas, por ejemplo, los
+  daemons son lanzados por el usuario root, pero algunos tienen usuario propio
+  para evitar ejecutarse como root.

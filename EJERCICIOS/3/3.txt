@@ -1,0 +1,7 @@
+¿Qué significa Close-on-exec?
+--------------------------------------------------------------------------------
+
+La bandera close-on-exec de la copia está desactivada, significando que no se
+cerrará en ejecución.
+
+En caso de éxito, se devuelve el nuevo descriptor.
