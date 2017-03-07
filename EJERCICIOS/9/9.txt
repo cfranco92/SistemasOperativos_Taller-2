@@ -1,0 +1,11 @@
+¿Cómo se obtiene la información del estado de un proceso en ejecución?
+--------------------------------------------------------------------------------
+
+Obteniendo el bloque de control de procesos.
+  --> $ ps -j
+
+R: Preparado
+S: Suspendido
+O: Ejecutado
+T: Parado
+Z: Zombie

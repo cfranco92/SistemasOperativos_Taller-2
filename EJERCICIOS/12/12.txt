@@ -1,0 +1,12 @@
+¿Qué significan cada uno de los siguientes campos?
+--------------------------------------------------------------------------------
+
+UID: Dueño del proceso.
+EPID:
+PID: Identificador del procesp.
+PPID: Identificador del proceso padre.
+SZ: Tamaño del proceso en la memoria virtual.
+WCHAN: Dirección del kernel cuando el proceso está durmiendo.
+TTY: De que terminal procede ese proceso (de donde se ejecuta).
+STIME: Tiempo en el que comenzó.
+TIME: Tiempo total.

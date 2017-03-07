@@ -1,0 +1,16 @@
+Pasos:
+  1) El kernel solicita espacio en el sistema de memoria virtual (relacion
+     memoria ram - disco) para el nuevo proceso.
+
+  2) La tabla de descriptores de archivos es duplicada y están disponibles las
+     mismas unidades de archivos en el proceso hijo.
+
+  3) Otros recursos compartidos tales como segmentos de memoria compartida están
+     disponibles al proceso hijo.
+
+  4) Otros valores del hijo son reiniciados (tiempo de ejecuci ́on, el conjunto
+     de sen ̃ales pendientes son borrados y as ́ı).
+
+  5) La llamada al sistema fork(2) establece el valor que va a retornar a cada
+     proceso. El proceso padre se le retornar ́a el identificador del proceso
+     hijo. El proceso hijo se le retornar ́a un valor cero.

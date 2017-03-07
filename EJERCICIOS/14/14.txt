@@ -1,0 +1,67 @@
+Entender cuando ocurren cada una de las señales que Linux soporta
+--------------------------------------------------------------------------------
+1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL
+ 5) SIGTRAP      6) SIGABRT      7) SIGBUS       8) SIGFPE
+ 9) SIGKILL     10) SIGUSR1     11) SIGSEGV     12) SIGUSR2
+13) SIGPIPE     14) SIGALRM     15) SIGTERM     17) SIGCHLD
+18) SIGCONT     19) SIGSTOP     20) SIGTSTP     21) SIGTTIN
+22) SIGTTOU     23) SIGURG      24) SIGXCPU     25) SIGXFSZ
+26) SIGVTALRM   27) SIGPROF     28) SIGWINCH    29) SIGIO
+30) SIGPWR      31) SIGSYS      32) SIGRTMIN    33) SIGRTMIN+1
+34) SIGRTMIN+2  35) SIGRTMIN+3  36) SIGRTMIN+4  37) SIGRTMIN+5
+38) SIGRTMIN+6  39) SIGRTMIN+7  40) SIGRTMIN+8  41) SIGRTMIN+9
+42) SIGRTMIN+10 43) SIGRTMIN+11 44) SIGRTMIN+12 45) SIGRTMIN+13
+46) SIGRTMIN+14 47) SIGRTMIN+15 48) SIGRTMAX-15 49) SIGRTMAX-14
+50) SIGRTMAX-13 51) SIGRTMAX-12 52) SIGRTMAX-11 53) SIGRTMAX-10
+54) SIGRTMAX-9  55) SIGRTMAX-8  56) SIGRTMAX-7  57) SIGRTMAX-6
+58) SIGRTMAX-5  59) SIGRTMAX-4  60) SIGRTMAX-3  61) SIGRTMAX-2
+62) SIGRTMAX-1  63) SIGRTMAX
+
+
+6 --> Abortar proceso
+
+
+No    Name         Default Action       Description
+     1     SIGHUP       terminate process    terminal line hangup
+     2     SIGINT       terminate process    interrupt program
+     3     SIGQUIT      create core image    quit program
+     4     SIGILL       create core image    illegal instruction
+     5     SIGTRAP      create core image    trace trap
+     6     SIGABRT      create core image    abort program (formerly SIGIOT)
+     7     SIGEMT       create core image    emulate instruction executed
+     8     SIGFPE       create core image    floating-point exception
+     9     SIGKILL      terminate process    kill program
+     10    SIGBUS       create core image    bus error
+     11    SIGSEGV      create core image    segmentation violation
+     12    SIGSYS       create core image    non-existent system call invoked
+     13    SIGPIPE      terminate process    write on a pipe with no reader
+     14    SIGALRM      terminate process    real-time timer expired
+     15    SIGTERM      terminate process    software termination signal
+     16    SIGURG       discard signal       urgent condition present on socket
+     17    SIGSTOP      stop process         stop (cannot be caught or ignored)
+     18    SIGTSTP      stop process         stop signal generated from keyboard
+     19    SIGCONT      discard signal       continue after stop
+     20    SIGCHLD      discard signal       child status has changed
+     21    SIGTTIN      stop process         background read attempted from control terminal
+     22    SIGTTOU      stop process         background write attempted to control terminal
+     23    SIGIO        discard signal       I/O is possible on a descriptor (see fcntl(2))
+     24    SIGXCPU      terminate process    cpu time limit exceeded (see setrlimit(2))
+     25    SIGXFSZ      terminate process    file size limit exceeded (see setrlimit(2))
+     26    SIGVTALRM    terminate process    virtual time alarm (see setitimer(2))
+     27    SIGPROF      terminate process    profiling timer alarm (see setitimer(2))
+     28    SIGWINCH     discard signal       Window size change
+     29    SIGINFO      discard signal       status request from keyboard
+     30    SIGUSR1      terminate process    User defined signal 1
+     31    SIGUSR2      terminate process    User defined signal 2
+
+
+
+
+SIGINT	2	… se pulsa Ctrl-C
+SIGFPE	8	… hay un error en coma flotante (ejemplo, división por cero)
+SIGPIPE	13	… se intenta escribir en una conexión (socket, tubería, …) rota
+(no hay proceso leyendo al otro lado).
+SIGALRM	14	… cuando termina un temporizador.
+SIGUSR1	16	… el programador lo decide. Esta señal es para uso del programador.
+No la utiliza el sistema operativo.
+SIGUSR2	17	… el programador lo decide. Idem a la anterior
